@@ -20,7 +20,7 @@ public class BinarySearchR {
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
+        int[] arr = {2, 5, 8, 12, 16, 23, 38, 56, 72};
         int value = 16;
 
         int result = binarySearch(arr, value, 0, arr.length - 1);
