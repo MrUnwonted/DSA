@@ -2,62 +2,80 @@ package List;
 
 public class SLinkedList {
 
-    class Node{
-        int data;
-        Node next;
 
-        Node (int data){
-            this.data = data;
+    private Node head;
+    private Node tail;
+    private int size;
+
+    public SLinkedList() {
+        this.size = 0;
+    }
+
+    private class Node {
+        private int value;
+        private Node next;
+
+        public Node(int value) {
+            this.value = value;
+        }
+
+        public Node(int value, Node next) {
+            this.value = value;
+            this.next = next;
         }
     }
 
-    public Node head = null;
-    public Node tail = null;
+//    public void insertFirst(int val){
+//        Node node = new Node(val);
+//        if (head == null){
+//            head = node;
+//            size ++;
+//            System.out.println("Value inserted" + node.value);
+//            return;
+//        }
+//        Node temp = head;
+//        temp.next=node;
+//        System.out.println("Value inserted" + node.value);
+//
+//        size ++;
+//
+//    }
 
-    public int size = 0;
-
-
-    public void addNode(int data){
-        Node newNode = new Node(data);
-
-        if (head == null){
-            head = newNode;
-        }else {
-            tail.next = newNode;
+//    Assigning values to head. But head will be replaced using tail. Tail acts as temp storage here
+    public void insertFirst(int val) {
+        Node node = new Node(val);
+        if (head == null) {
+            head = node;
+            tail = node; // Update tail to the new node
+            size++;
+            System.out.println("Value inserted: " + node.value);
+        } else {
+            node.next = head;
+            head = node;
+            size++;
+            System.out.println("Value inserted: " + node.value);
         }
-        size ++;
-        tail = newNode;
     }
 
-    public void display(){
-
-        if (head == null){
-            System.out.println("Empty");
-            return ;
+//    Assigning values at the tail end
+    public void insertLast(int val){
+        if (tail == null){
+            insertFirst(val);
+            return;
         }
-        Node curr = head;
-        while (curr!=null){
-            System.out.println(curr.data);
-            curr = curr.next;
-        }
-        System.out.println(size);
+        Node node = new Node(val);
+        tail.next = node;
+        tail = node;
+        size++;
     }
 
-    public static void main(String[] args) {
-        SLinkedList list = new SLinkedList();
-
-        list.display();
-        int arr[] = {1,2,3};
-
-        for ( int i : arr) {
-            list.addNode(i);
+    public void display() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.value + " -> ");
+            temp = temp.next;
         }
-
-//        list.addNode(10);
-//        list.addNode(20);
-//        list.addNode(30);
-
-        list.display();
+        System.out.println("END");
     }
 
 }
