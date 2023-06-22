@@ -2,6 +2,7 @@ package List;
 
 public class Main {
     public static void main(String[] args) {
+            //Debug for details
 //        SLinkedList sl = new SLinkedList();
 //            sl.insertFirst(1);
 //            sl.insertFirst(3);
@@ -16,7 +17,11 @@ public class Main {
             sL.insertLast(2);
             sL.insertLast(5);
 
+//            sL.insert(33,1);
+//            sL.insert(30,4);
+            sL.insertTemp(22,2);
             sL.display();
+
 
     }
 }
