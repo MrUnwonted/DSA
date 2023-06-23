@@ -14,6 +14,12 @@ public class CustomHashtable {
         mapp.put("Age",22);
         mapp.put("Age",22);
 
+        String s = "Hello";
+        for (int i = 0; i <s.length() ; i++) {
+            int a = (int) s.charAt(i);
+            System.out.println(s.charAt(i) +"-" + a);
+        }
+
 
         for(String key : mapp.keySet()){
             System.out.println(key + "\t" + mapp.get(key));
