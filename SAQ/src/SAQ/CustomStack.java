@@ -49,7 +49,7 @@ public class CustomStack {
     }
 
 
-    public static void main(String[] args) throws Exception {
+    public static void main(StringR[] args) throws Exception {
 
         CustomStack stack = new CustomStack(12);
         stack.push(103);
