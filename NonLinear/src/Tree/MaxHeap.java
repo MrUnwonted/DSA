@@ -47,6 +47,13 @@ public class MaxHeap {
         heap = temp;
     }
 
+    public void print(){
+        for (int i = 1; i <n ; i++) {
+            System.out.println(heap[i]+ " ");
+        }
+    }
+
+
     public static void main(String[] args) {
         MaxHeap pq = new MaxHeap(3);
         System.out.println(pq.size());
@@ -61,5 +68,6 @@ public class MaxHeap {
 
         System.out.println(pq.size());
         System.out.println(pq.isEmpty());
+        pq.print();
     }
 }
