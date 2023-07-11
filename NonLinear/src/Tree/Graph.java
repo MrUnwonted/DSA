@@ -88,9 +88,9 @@ public class Graph {
         Graph graph = new Graph();
         graph.insert(3,5,true);
         graph.insert(3,4,true);
-        graph.insert(5,6,false);
+        graph.insert(5,6,true);
         graph.display();
-        graph.bfs(3);
-        graph.dfs(3);
+//        graph.bfs(3);
+//        graph.dfs(3);
     }
 }
